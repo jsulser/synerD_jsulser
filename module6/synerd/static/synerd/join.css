@@ -1,0 +1,60 @@
+fieldset {
+float: center;
+clear: left;
+width: 30%;
+margin: 0 0 1em 0;
+padding: 0;
+border: transparent;
+}
+    
+    
+.show section {
+width: 50%;
+padding-bottom: 1em;
+}
+
+.formDiv {
+margin: 10px;
+border-radius: 15px;
+margin-top: 30px;
+position: relative;
+height: 35px;
+}
+
+
+.formDiv label {
+position: absolute;
+top: -17px;
+left: 10px;
+padding: 2px 10px;
+border-radius: 15px;
+background: rgb(145, 211, 255);
+text-align: left;
+
+}
+
+.formDiv input {
+width: 100%;
+height: 100%;
+text-align: left;
+border-radius: 15px;
+background: transparent;
+border: none !important;
+border:solid 1px #566472 !important;
+}
+
+#genderDiv {
+border:solid 1px #566472 !important;
+width: 94%;
+height: 37px !important;
+}
+
+#genderInput {
+margin-top: 10px;
+}
+
+#submitButton {
+border-radius: 15px;
+background: rgb(145, 211, 255);
+padding: 2px 10px;
+}

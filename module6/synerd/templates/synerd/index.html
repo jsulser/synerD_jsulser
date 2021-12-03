@@ -1,0 +1,231 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>SynerD</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link href = "{% static 'synerd/index.css' %}" rel="stylesheet">
+</head>
+<body>
+
+
+
+<div class="navbar">
+  <h2>SynerD Logo Placeholder</h2>
+  <a href="#donate">Donate</a>
+  <div class="dropdown">
+    <button class="dropbtn">Resources
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#">Member List</a>
+      <a href="#">Something Else</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">About 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#">Our Work</a>
+      <a href="#">Our Members</a>
+      <a href="#">Contact</a>
+    </div>
+  </div> 
+  <a href="#home">Home</a>
+</div>
+
+<header>
+  <h2><i>Let's Serve Purposefully</i>
+    <div class="search-container">
+      <form action="/search_result.php">
+        <input type="text" placeholder="Search.." name="search">
+        <button type="submit"><i class="fa fa-search"></i></button>
+        <a href="{% url 'dashboard' %}">Login</a>
+        <a href="{% url 'join' %}">Join Us</a>
+      </form>
+      
+    </div>  
+  </h2>  
+</header>
+
+<hr class="solid">
+
+<!-- Slideshow container from w3schools -->
+<div id="slideshow">
+    <div class="slideshow-container">
+
+        <!-- Full-width images with number and caption text -->
+        <div class="mySlides fade" id="Exciting News">
+        <img src="{% static 'synerd/media/img_mountains_wide.jpg' %}" style="width:100%">
+        </div>
+    
+        <div class="mySlides fade" id="Really exciting news">
+        <img src="{% static 'synerd/media/img_snow_wide.jpg' %}" style="width:100%">
+        </div>
+    
+        <div class="mySlides fade" id="Probably fake news">
+        <img src="{% static 'synerd/media/img_lights_wide.jpg' %}" style="width:100%">
+        </div>
+    
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    
+    <!-- Image text -->
+      <div class="caption-container">
+        <p id="caption"></p>
+        <!-- The dots/circles -->
+        <div style="text-align:center">
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+      </div>
+</div>
+
+
+
+<section>
+  <nav>
+    <!-- Hover tabs from w3schools -->
+    <div>
+        <div class="tab">
+            <button class="tablinks" onmouseover="openTab(event, 'hover_tab1')">ID Protection</button>
+            <button class="tablinks" onmouseover="openTab(event, 'hover_tab2')">Corpses Repatriation</button>
+            <button class="tablinks" onmouseover="openTab(event, 'hover_tab3')">Assistance Programs</button>
+        </div>
+        
+        <div id="hover_tab1" class="tabcontent">
+            <h3>ID Protection</h3>
+            <p>This is a strange charity.</p>
+        </div>
+        
+        <div id="hover_tab2" class="tabcontent">
+            <h3>Corpses Repatriation</h3>
+            <p>This is a weird charity.</p>
+        </div>
+        
+        <div id="hover_tab3" class="tabcontent">
+            <h3>Assistance Programs</h3>
+            <p>This is a standard charity.</p>
+        </div>
+    </div>
+  </nav>
+  
+  <article>
+    <div id="map_text">
+      <h1>London</h1>
+      <p>London is the capital city of England. It is the most populous city in the  United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
+      <p>Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium.</p>
+    </div>
+  </article>
+
+  <!-- Google Maps section, ideally an actual map, but for this project just a placeholder picture-->
+  <div id="map"><img src="{% static 'synerd/media/map_placeholder.png' %}"></div>
+
+  
+</section>
+
+<footer>
+
+  <nav id='nav2'>
+    <a href="/">Home</a> |
+    <a href="/about/">About Us</a> |
+    <a href="/services/">Services</a> |
+    <a href="/contact/">Contact</a>
+  </nav>
+
+
+  <p>Author: Justin Sulser</p>
+  <p><a href="mailto:test@test.com">test@test.com</a></p>
+</footer>
+
+<script>
+  /* Slideshow script from wc3schools */
+   var slideIndex = 1;
+   showSlides(slideIndex);
+ 
+   // Next/previous controls
+   function plusSlides(n) {
+     showSlides(slideIndex += n);
+   }
+ 
+   // Thumbnail image controls
+   function currentSlide(n) {
+     showSlides(slideIndex = n);
+   }
+ 
+   function showSlides(n) {
+     var i;
+     var slides = document.getElementsByClassName("mySlides");
+     var dots = document.getElementsByClassName("dot");
+     var captionText = document.getElementById("caption");
+ 
+     if (n > slides.length) {slideIndex = 1}
+     if (n < 1) {slideIndex = slides.length}
+     for (i = 0; i < slides.length; i++) {
+         slides[i].style.display = "none";
+     }
+     for (i = 0; i < dots.length; i++) {
+         dots[i].className = dots[i].className.replace(" active", "");
+     }
+     slides[slideIndex-1].style.display = "block";
+     dots[slideIndex-1].className += " active";
+     captionText.innerHTML = slides[slideIndex-1].id;
+   }
+   /* Hover tabs script from wc3shools */
+   function openTab(evt, tabName) {
+     // Declare all variables
+     var i, tabcontent, tablinks;
+ 
+     // Get all elements with class="tabcontent" and hide them
+     tabcontent = document.getElementsByClassName("tabcontent");
+     for (i = 0; i < tabcontent.length; i++) {
+       tabcontent[i].style.display = "none";
+     }
+ 
+     // Get all elements with class="tablinks" and remove the class "active"
+     tablinks = document.getElementsByClassName("tablinks");
+     for (i = 0; i < tablinks.length; i++) {
+       tablinks[i].className = tablinks[i].className.replace(" active", "");
+     }
+ 
+     // Show the current tab, and add an "active" class to the link that opened the tab
+     document.getElementById(tabName).style.display = "block";
+     evt.currentTarget.className += " active";
+   }
+  
+
+  /* Google Maps script
+   // Initialize and add the map
+   function initMap() {
+        // The location of Uluru
+        const uluru = { lat: -25.344, lng: 131.036 };
+        // The map, centered at Uluru
+        const map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 4,
+          center: uluru,
+        });
+        // The marker, positioned at Uluru
+        const marker = new google.maps.Marker({
+          position: uluru,
+          map: map,
+        });
+      }
+  */
+  </script>
+  <!-- Google Maps script
+  <script>
+   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAVXOapNsxQ4NPXX4q-_1W1OhszUkCUuFQ&callback=initMap&libraries=&v=weekly"
+      async
+ </script> -->
+
+</body>
+</html>

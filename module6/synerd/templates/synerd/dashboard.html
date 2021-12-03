@@ -1,0 +1,108 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Dashboard</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'synerd/join.css' %}">
+    </head>
+    <body>
+        <center>
+            <font face="arial black" size="4">
+                SynerD Web Portal<br>
+                <i>Let's Serve Purposefully</i></font><br>
+            <br>
+            <hr size="4" color="black"/>
+            <p><i>All fields required unless otherwise noted</i></p>
+            <form class="show" id="form" name="theForm" action="#" method="POST">
+                <fieldset>
+                    <section>
+                        <h3>Officer Information</h3>
+                        <div class="formDiv">
+                            <label for="ofrSub">Subscriber ID</label>
+                            <input id="ofrSubInput" name="ofrSub" type="number" required/>
+                        </div>
+                        <div class="formDiv">
+                            <label for="ofrCode">Office Code</label>
+                            <input id="ofrCodeInput" name="ofrCode" type="text" required/>
+                        </div>
+                        <div class="formDiv">
+                            <label for="ofrStart">Start Date</label>
+                            <input id="ofrStartInput" name="ofrStart" type="date" required/>
+                        </div>
+                        <div class="formDiv">
+                            <label for="ofrEnd">End Date</label>
+                            <input id="ofrEndInput" name="ofrEnd" type="date" optional/>
+                        </div>
+                    </section>
+                </fieldset>
+                <fieldset>
+                    <section>
+                        <h3>Office Information</h3>
+                        <div class="formDiv">
+                            <label for="ofName">Office Name</label>
+                            <input id="ofNameInput" name="ofName" type="text" required/>
+                        </div>
+                        <div class="formDiv">
+                            <label for="ofCode">Office Code</label>
+                            <input id="ofCodeInput" name="ofCode" type="text" required/>
+                        </div>
+                        <div class="formDiv">
+                            <label for="ofAtt">Attribution</label>
+                            <input id="ofAttInput" name="ofAtt" type="text" required/>
+                        </div>
+                    </section>
+                </fieldset>
+                <fieldset>
+                    <section>
+                        <h3>Organization Member Information</h3>
+                        <div class="formDiv">
+                            <label for="orgMemCode">Organization Code</label>
+                            <input id="orgMemCodeInput" name="orgMemCode" type="text" required/>
+                        </div>
+                        <div class="formDiv">
+                            <label for="orgMemSub">Subscriber ID</label>
+                            <input id="orgMemSubInput" name="orgMemSub" type="number" required/>
+                        </div>
+                        <div class="formDiv">
+                            <label for="ofName">Office Name</label>
+                            <input id="ofNameInput" name="ofName" type="text" required/>
+                        </div>
+                        <div class="formDiv" id="subDiv">
+                            <label for="subType">Subscription Type</label>
+                            <select id="subTypeInput" name="subType"required>
+                                <option value="Individual">Individual</option>
+                                <option value="Organization">Organization</option>						
+                            </select>
+                        </div>
+                        <div class="formDiv">
+                            <label for="orgMemStart">Membership Start Date</label>
+                            <input id="orgMemStartInput" name="orgMemStart" type="date" required/>
+                        </div>
+                        <div class="formDiv">
+                            <label for="orgMemEnd">Membership End Date</label>
+                            <input id="orgMemEndInput" name="orgMemEnd" type="date" required/>
+                        </div>
+                        <div class="formDiv">
+                            <label for="orgMemNative">Native Country</label>
+                            <input id="orgMemNativeInput" name="orgMemNative" type="text" required/>
+                        </div>
+                        <div class="formDiv">
+                            <label for="member">Member Organization</label>
+                            <input id="memberOrganizationInput" name="memberOrg" type="text" placeholder="Optional"/>
+                        </div>
+                    </section>
+                </fieldset>
+                <fieldset>
+                    <section>
+                        <input id="submitButton" name="submitButton" type="submit" value="Register Now" onclick="formSubmit()" />
+                    </section>
+                </fieldset>
+            </form>
+        
+        <script src="" async defer></script>
+    </body>
+</html>
