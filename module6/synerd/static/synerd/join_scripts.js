@@ -14,7 +14,7 @@
       APP.addListeners();
     },
     addListeners() {
-      let form = document.sampleForm;
+      let form = document.getElementById('form');
       let username = document.getElementById('usernameInput');
       let pass = document.getElementById('passwordInput');
       let email = document.getElementById('emailInput');

@@ -8,12 +8,14 @@ class UserInfo(models.Model):
     middleName = models.CharField(max_length=20, null=True)
     lastName = models.CharField(max_length=20)
     email = models.CharField(max_length=20)
-    address1 = models.CharField(max_length=20)
+    address1 = models.CharField(max_length=20, null=True)
     address2 = models.CharField(max_length=20, null=True)
     city = models.CharField(max_length=20)
     state = models.CharField(max_length=12)
     zip = models.CharField(max_length=11)
-    employerName = models.CharField(max_length=20)
+    homephone = models.CharField(max_length=15)
+    cellphone = models.CharField(max_length=15)
+    employerName = models.CharField(max_length=20, null=True)
     
     def __str__(self) -> str:
         return self.username

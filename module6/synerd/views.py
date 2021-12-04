@@ -9,3 +9,6 @@ def join(request):
 
 def dashboard(request):
     return render(request, 'synerd/dashboard.html')
+
+def members(request):
+    return render(request, 'synerd/members.html')
