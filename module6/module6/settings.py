@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'synerd',
+    'backend',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -76,8 +77,12 @@ WSGI_APPLICATION = 'module6.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'synerd',
+        'HOST': 'localhost',
+        'USER': 'root2',
+        'PASSWORD': 'moomoo',
+        'PORT': '3306'
     }
 }
 
